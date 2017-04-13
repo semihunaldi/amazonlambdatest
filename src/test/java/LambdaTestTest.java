@@ -17,7 +17,7 @@ import java.util.Map;
 public class LambdaTestTest
 {
     @Test
-    public void test() throws Exception
+    public void test()
     {
         LambdaTest lambdaTest = new LambdaTest();
         Map<String,String> inputKeyValue = Maps.newHashMap();

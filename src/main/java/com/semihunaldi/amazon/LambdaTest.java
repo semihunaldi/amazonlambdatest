@@ -1,7 +1,6 @@
 package com.semihunaldi.amazon;
 
 import com.amazonaws.services.lambda.runtime.Context;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.semihunaldi.amazon.model.SampleResponse;
 
 import java.util.Map;
@@ -12,7 +11,7 @@ import java.util.Map;
  */
 public class LambdaTest
 {
-    public SampleResponse lambdaTestHandler(Map<String,String> inputKeyValue, Context context) throws JsonProcessingException
+    public SampleResponse lambdaTestHandler(Map<String,String> inputKeyValue, Context context)
     {
         String test = inputKeyValue.get("test");
         SampleResponse sampleResponse = new SampleResponse();
