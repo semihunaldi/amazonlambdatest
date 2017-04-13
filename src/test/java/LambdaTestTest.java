@@ -6,6 +6,7 @@ import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.google.common.collect.Maps;
 import com.semihunaldi.amazon.LambdaTest;
 import com.semihunaldi.amazon.model.SampleResponse;
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import java.util.Map;
@@ -23,6 +24,8 @@ public class LambdaTestTest
         Map<String,String> inputKeyValue = Maps.newHashMap();
         inputKeyValue.put("test","Hello AWS Lambda");
         SampleResponse sampleResponse = lambdaTest.lambdaTestHandler(inputKeyValue,getAWSContext());
+        assert sampleResponse != null;
+        assert StringUtils.isNotBlank(sampleResponse.getTest());
         System.out.println(sampleResponse.toString());
     }
 
