@@ -3,12 +3,12 @@ import com.amazonaws.services.lambda.runtime.ClientContext;
 import com.amazonaws.services.lambda.runtime.CognitoIdentity;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
-import com.google.common.collect.Maps;
 import com.semihunaldi.amazon.LambdaTest;
 import com.semihunaldi.amazon.model.SampleResponse;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -21,7 +21,7 @@ public class LambdaTestTest
     public void test()
     {
         LambdaTest lambdaTest = new LambdaTest();
-        Map<String,String> inputKeyValue = Maps.newHashMap();
+        Map<String,String> inputKeyValue = new HashMap<>();
         inputKeyValue.put("test","Hello AWS Lambda");
         SampleResponse sampleResponse = lambdaTest.lambdaTestHandler(inputKeyValue,getAWSContext());
         assert sampleResponse != null;
@@ -116,12 +116,12 @@ public class LambdaTestTest
 
                     public Map<String, String> getCustom()
                     {
-                        return Maps.newHashMap();
+                        return new HashMap<>();
                     }
 
                     public Map<String, String> getEnvironment()
                     {
-                        return Maps.newHashMap();
+                        return new HashMap<>();
                     }
                 };
             }
